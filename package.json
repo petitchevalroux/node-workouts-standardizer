@@ -1,6 +1,6 @@
 {
   "name": "@petitchevalroux/workouts-standardizer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Transform stream collection to standardize workouts data",
   "scripts": {
     "test": "make tests"
