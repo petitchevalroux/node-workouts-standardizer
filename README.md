@@ -49,6 +49,8 @@ tStream.on("data", function(workout) {
 tStream.on("error", function(err) {
         console.log(err);
 });
+
+wStream.pipe(tStream);
 ```
 
 ### Sample output
