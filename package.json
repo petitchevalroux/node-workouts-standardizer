@@ -5,6 +5,7 @@
   "scripts": {
     "test": "make tests"
   },
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://github.com/petitchevalroux/node-workouts-standardizer.git"
