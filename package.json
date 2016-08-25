@@ -1,5 +1,5 @@
 {
-  "name": "@petitchevalroux/node-workouts-standardizer",
+  "name": "@petitchevalroux/workouts-standardizer",
   "version": "1.0.0",
   "description": "Transform stream collection to standardize workouts data",
   "scripts": {
