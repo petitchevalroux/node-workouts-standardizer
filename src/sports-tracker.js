@@ -162,24 +162,6 @@ Stream.prototype._transformHrdata = function(workoutIn) {
             reject(new Error("hrdata.avg is not a number (workout:" +
                 JSON.stringify(workoutIn) + ")"));
         } else {
-            // totalDistance is in bpm
-            resolve({
-                "property": "avgHr",
-                "value": workoutIn.hrdata.avg
-            });
-        }
-    });
-};
-
-Stream.prototype._transformHrdata = function(workoutIn) {
-    return new Promise(function(resolve, reject) {
-        if (typeof workoutIn.hrdata !== "object") {
-            reject(new Error("hrdata is not an object (workout:" +
-                JSON.stringify(workoutIn) + ")"));
-        } else if (typeof workoutIn.hrdata.avg !== "number") {
-            reject(new Error("hrdata.avg is not a number (workout:" +
-                JSON.stringify(workoutIn) + ")"));
-        } else {
             // heart rate is in bpm
             resolve({
                 "property": "avgHeartRate",
