@@ -171,6 +171,38 @@ Stream.prototype._transformHrdata = function(workoutIn) {
     });
 };
 
+Stream.prototype._transformAvgSpeed = function(workoutIn) {
+    return new Promise(function(resolve, reject) {
+        if (typeof workoutIn.energyConsumption !== "number") {
+            reject(new Error(
+                "avgSpeed is not a number (workout:" +
+                JSON.stringify(workoutIn) + ")"));
+        } else {
+            // avgSpeed is in m/s
+            resolve({
+                "property": "avgSpeed",
+                "value": workoutIn.avgSpeed
+            });
+        }
+    });
+};
+
+Stream.prototype._transformMaxSpeed = function(workoutIn) {
+    return new Promise(function(resolve, reject) {
+        if (typeof workoutIn.energyConsumption !== "number") {
+            reject(new Error(
+                "maxSpeed is not a number (workout:" +
+                JSON.stringify(workoutIn) + ")"));
+        } else {
+            // maxSpeed is in m/s
+            resolve({
+                "property": "maxSpeed",
+                "value": workoutIn.maxSpeed
+            });
+        }
+    });
+};
+
 util.inherits(Stream, Transform);
 
 module.exports = Stream;
