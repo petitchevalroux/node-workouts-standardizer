@@ -15,7 +15,8 @@ Each workout may contains the following data :
     "distance":51146,
     "avgHeartRate":0,
     "energy":2060
-
+    "maxSpeed":11.76,
+    "avgSpeed":7.38
 }
 ```
 
@@ -26,6 +27,8 @@ Each workout may contains the following data :
  * **distance** number workout's distance in meters.
  * **avgHeartRate** number workout's average heart rate in bpm.
  * **energy** number workout's consumed energy in kcal.
+ * **maxSpeed** max speed in m/s.
+ * **avgSpeed** average speed in m/s.
 
 ## [Sports-tracker](http://sports-tracker.com/) transform stream
 

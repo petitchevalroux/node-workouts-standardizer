@@ -162,28 +162,42 @@ Stream.prototype._transformHrdata = function(workoutIn) {
             reject(new Error("hrdata.avg is not a number (workout:" +
                 JSON.stringify(workoutIn) + ")"));
         } else {
-            // totalDistance is in bpm
+            // heart rate is in bpm
             resolve({
-                "property": "avgHr",
+                "property": "avgHeartRate",
                 "value": workoutIn.hrdata.avg
             });
         }
     });
 };
 
-Stream.prototype._transformHrdata = function(workoutIn) {
+Stream.prototype._transformAvgSpeed = function(workoutIn) {
     return new Promise(function(resolve, reject) {
-        if (typeof workoutIn.hrdata !== "object") {
-            reject(new Error("hrdata is not an object (workout:" +
-                JSON.stringify(workoutIn) + ")"));
-        } else if (typeof workoutIn.hrdata.avg !== "number") {
-            reject(new Error("hrdata.avg is not a number (workout:" +
+        if (typeof workoutIn.energyConsumption !== "number") {
+            reject(new Error(
+                "avgSpeed is not a number (workout:" +
                 JSON.stringify(workoutIn) + ")"));
         } else {
-            // heart rate is in bpm
+            // avgSpeed is in m/s
             resolve({
-                "property": "avgHeartRate",
-                "value": workoutIn.hrdata.avg
+                "property": "avgSpeed",
+                "value": workoutIn.avgSpeed
+            });
+        }
+    });
+};
+
+Stream.prototype._transformMaxSpeed = function(workoutIn) {
+    return new Promise(function(resolve, reject) {
+        if (typeof workoutIn.energyConsumption !== "number") {
+            reject(new Error(
+                "maxSpeed is not a number (workout:" +
+                JSON.stringify(workoutIn) + ")"));
+        } else {
+            // maxSpeed is in m/s
+            resolve({
+                "property": "maxSpeed",
+                "value": workoutIn.maxSpeed
             });
         }
     });
